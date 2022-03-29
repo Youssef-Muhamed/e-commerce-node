@@ -1,0 +1,26 @@
+<div class="alert alert-danger" *ngIf="isLoading; else d"> Loading </div>
+<ng-template #d>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+      <th>#</th>
+      <th>userId</th>
+      <th>id</th>
+      <th>title</th>
+      <th>completed</th>
+      <th>show</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of data; let i=index ;">
+        <td>{{i+1}}</td>
+        <td>{{task.userId}}</td>
+        <td>{{task.id}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.completed}}</td>
+        <td><button class="btn btn-primary" routerLink="/{{task.id}}" >show</button></td>
+      </tr>
+    </tbody>
+
+  </table> 
+</ng-template>
